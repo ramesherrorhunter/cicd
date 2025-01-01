@@ -1,0 +1,23 @@
+name: Trigger Semgrep Scan 
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  call-semgrep-scan:
+    name: Call Semgrep Scan Workflow
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Trigger Semgrep Scan
+        uses: ramesherrorhunter/semgrep/.github/workflows/semgrep.yml@main
+        with:
+          SEMGREP_API_TOKEN: ${{ secrets.SEMGREP_API_TOKEN }}
