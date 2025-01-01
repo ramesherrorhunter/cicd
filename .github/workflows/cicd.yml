@@ -1,4 +1,4 @@
-name: Trigger Semgrep Scan 
+name: Trigger Semgrep and Checkov Scan
 
 on:
   push:
@@ -14,3 +14,7 @@ jobs:
     uses: ramesherrorhunter/semgrep/.github/workflows/semgrep.yml@main
     secrets:
         SEMGREP_API_TOKEN: ${{ secrets.SEMGREP_API_TOKEN }}
+  
+  Call-checkov-scan:
+    name: Run Checkov Scan
+    uses: ramesherrorhunter/semgrep/.github/workflows/checkov.yml
