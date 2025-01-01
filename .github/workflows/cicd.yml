@@ -17,4 +17,4 @@ jobs:
   
   Call-checkov-scan:
     name: Run Checkov Scan
-    uses: ramesherrorhunter/semgrep/.github/workflows/checkov.yml
+    uses: ramesherrorhunter/checkov/.github/workflows/checkov.yml
